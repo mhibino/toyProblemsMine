@@ -33,6 +33,12 @@ var Harshad = ( function() {
      */
     getNext: function( number ) {
       // Your implementation goes here
+      var test = number + 1;
+      while (!Harshad.isValid(test)) {
+        test++;
+      }
+      return test;
+
     },
     /**
      * Returns the suite of Harshad numbers, starting after a given number.
@@ -45,6 +51,14 @@ var Harshad = ( function() {
      */
     getSerie: function( count, start ) {
       // Your implementation goes here
+      var result = [];
+      var input = start || 0;
+      while (result.length < count) {
+        input = Harshad.getNext(input);
+        result.push(input);
+      }
+
+      return result;
     }
   };
 
